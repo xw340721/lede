@@ -1,0 +1,27 @@
+name: Build
+
+on: [push]
+
+jobs:
+  k3:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@master
+      - name: Set Environment
+        run: |
+          sudo apt-get -yqq update
+          sudo apt-get -yqq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint
+      - name: Prepare Build
+        run: |
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
+          cp k3config .config
+          make defconfig
+          sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm-k3|TARGET_DEVICES += phicomm-k3|' target/linux/bcm53xx/image/Makefile
+      - name: Build Image
+        run: make -j$(nproc) V=sc
+      - name: Upload Image
+        uses: actions/upload-artifact@v1
+        with:
+          name: lede-k3-${{ github.sha }}
+          path: bin
