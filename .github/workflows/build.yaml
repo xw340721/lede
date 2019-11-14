@@ -16,7 +16,6 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           cp k3.config .config
-          make download
           make defconfig
           sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm-k3|TARGET_DEVICES += phicomm-k3|' target/linux/bcm53xx/image/Makefile
       - name: Build Image
