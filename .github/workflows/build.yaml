@@ -19,7 +19,7 @@ jobs:
           make defconfig
           sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm-k3|TARGET_DEVICES += phicomm-k3|' target/linux/bcm53xx/image/Makefile
       - name: Build Image
-        run: make -j$(nproc) V=sc
+        run: make -j$(nproc) V=s
       - name: Upload Image
         uses: actions/upload-artifact@v1
         with:
