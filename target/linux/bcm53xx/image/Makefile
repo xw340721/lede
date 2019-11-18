@@ -138,25 +138,25 @@ define Device/asus-rt-ac56u
   DEVICE_TITLE := Asus RT-AC56U
   DEVICE_PACKAGES := $(B43) $(USB3_PACKAGES)
 endef
-TARGET_DEVICES += asus-rt-ac56u
+# TARGET_DEVICES += asus-rt-ac56u
 
 define Device/asus-rt-ac68u
   DEVICE_TITLE := Asus RT-AC68U
   DEVICE_PACKAGES := $(USB3_PACKAGES)
 endef
-TARGET_DEVICES += asus-rt-ac68u
+# TARGET_DEVICES += asus-rt-ac68u
 
 define Device/asus-rt-ac87u
   DEVICE_TITLE := Asus RT-AC87U
   DEVICE_PACKAGES := $(USB3_PACKAGES)
 endef
-TARGET_DEVICES += asus-rt-ac87u
+# TARGET_DEVICES += asus-rt-ac87u
 
 define Device/asus-rt-n18u
   DEVICE_TITLE := Asus RT-N18U
   DEVICE_PACKAGES := $(USB3_PACKAGES)
 endef
-TARGET_DEVICES += asus-rt-n18u
+# TARGET_DEVICES += asus-rt-n18u
 
 # Buffalo devices have TFTP recovery mode which can work nicely with initramfs
 # kernels.
@@ -173,14 +173,14 @@ define Device/buffalo-wxr-1900dhp
   DEVICE_TITLE := Buffalo WXR-1900DHP
   DEVICE_PACKAGES := $(USB3_PACKAGES)
 endef
-TARGET_DEVICES += buffalo-wxr-1900dhp
+# TARGET_DEVICES += buffalo-wxr-1900dhp
 
 define Device/buffalo-wzr-600dhp2
   $(call Device/buffalo/Default)
   DEVICE_TITLE := Buffalo WZR-600DHP2
   DEVICE_PACKAGES := $(B43) $(USB2_PACKAGES)
 endef
-TARGET_DEVICES += buffalo-wzr-600dhp2
+# TARGET_DEVICES += buffalo-wzr-600dhp2
 
 define Device/buffalo-wzr-900dhp
   $(call Device/buffalo/Default)
@@ -201,14 +201,14 @@ define Device/buffalo-wzr-900dhp
 	buffalo-tag-dhp WZR-900DHP2 JP jp | buffalo-enc-tag | \
 	buffalo-dhp-image
 endef
-TARGET_DEVICES += buffalo-wzr-900dhp
+# TARGET_DEVICES += buffalo-wzr-900dhp
 
 define Device/buffalo-wzr-1750dhp
   $(call Device/buffalo/Default)
   DEVICE_TITLE := Buffalo WZR-1750DHP
   DEVICE_PACKAGES := $(B43) $(USB3_PACKAGES)
 endef
-TARGET_DEVICES += buffalo-wzr-1750dhp
+# TARGET_DEVICES += buffalo-wzr-1750dhp
 
 define Device/dlink
   IMAGES := bin
@@ -221,7 +221,7 @@ define Device/dlink-dir-885l
   $(Device/dlink)
   SIGNATURE := wrgac42_dlink.2015_dir885l
 endef
-TARGET_DEVICES += dlink-dir-885l
+# TARGET_DEVICES += dlink-dir-885l
 
 # Linksys devices are disabled due to problem with 2 TRX partitions
 define Device/linksys-ea6300-v1
@@ -234,7 +234,7 @@ define Device/linksys-ea6500-v2
   DEVICE_TITLE := Linksys EA6500 V2
   DEVICE_PACKAGES := $(B43) $(USB3_PACKAGES)
 endef
-TARGET_DEVICES += linksys-ea6500-v2
+# TARGET_DEVICES += linksys-ea6500-v2
 
 define Device/linksys-ea9200
   DEVICE_TITLE := Linksys EA9200 V1
@@ -261,7 +261,7 @@ define Device/netgear-r6250
   $(Device/netgear)
   NETGEAR_BOARD_ID := U12H245T00_NETGEAR
 endef
-TARGET_DEVICES += netgear-r6250
+# TARGET_DEVICES += netgear-r6250
 
 define Device/netgear-r6300-v2
   DEVICE_TITLE := Netgear R6300 V2
@@ -269,7 +269,7 @@ define Device/netgear-r6300-v2
   $(Device/netgear)
   NETGEAR_BOARD_ID := U12H240T00_NETGEAR
 endef
-TARGET_DEVICES += netgear-r6300-v2
+# TARGET_DEVICES += netgear-r6300-v2
 
 define Device/netgear-r7000
   DEVICE_TITLE := Netgear R7000
@@ -277,7 +277,7 @@ define Device/netgear-r7000
   $(Device/netgear)
   NETGEAR_BOARD_ID := U12H270T00_NETGEAR
 endef
-TARGET_DEVICES += netgear-r7000
+# TARGET_DEVICES += netgear-r7000
 
 define Device/netgear-r7900
   DEVICE_TITLE := Netgear R7900
@@ -285,7 +285,7 @@ define Device/netgear-r7900
   $(Device/netgear)
   NETGEAR_BOARD_ID := U12H315T30_NETGEAR
 endef
-TARGET_DEVICES += netgear-r7900
+# TARGET_DEVICES += netgear-r7900
 
 define Device/netgear-r8000
   DEVICE_TITLE := Netgear R8000
@@ -293,7 +293,7 @@ define Device/netgear-r8000
   $(Device/netgear)
   NETGEAR_BOARD_ID := U12H315T00_NETGEAR
 endef
-TARGET_DEVICES += netgear-r8000
+# TARGET_DEVICES += netgear-r8000
 
 define Device/netgear-r8500
   DEVICE_TITLE := Netgear R8500
@@ -311,7 +311,7 @@ define Device/smartrg-sr400ac
   KERNEL_INITRAMFS_SUFFIX := .bin
   KERNEL_INITRAMFS := kernel-bin | append-dtb | lzma-d16
 endef
-TARGET_DEVICES += smartrg-sr400ac
+# TARGET_DEVICES += smartrg-sr400ac
 
 define Device/phicomm-k3
   DEVICE_TITLE := PHICOMM K3
@@ -324,13 +324,13 @@ define Device/arris-sbr-ac1900p
   DEVICE_TITLE := ARRIS SBR-AC1900P
   DEVICE_PACKAGES := $(USB3_PACKAGES)
 endef
-TARGET_DEVICES += arris-sbr-ac1900p
+# TARGET_DEVICES += arris-sbr-ac1900p
 
 define Device/arris-sbr-ac3200p
   DEVICE_TITLE := ARRIS SBR-AC3200P
   DEVICE_PACKAGES := $(BRCMFMAC_43602A1) $(USB3_PACKAGES)
 endef
-TARGET_DEVICES += arris-sbr-ac3200p
+# TARGET_DEVICES += arris-sbr-ac3200p
 
 define Device/tenda-ac9
   DEVICE_TITLE := Tenda AC9
