@@ -41,7 +41,7 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi
 	$(INSTALL_DATA) ./files/luci/model/cbi/k3screenctrl.lua $(1)/usr/lib/lua/luci/model/cbi/
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
-  	$(INSTALL_DATA) ./files/luci/i18n/k3screenctrl.zh-cn.lmo $(1)/usr/lib/lua/luci/i18n/
+	po2lmo ./files/luci/i18n/k3screenctrl.zh-cn.po $(1)/usr/lib/lua/luci/i18n/k3screenctrl.zh-cn.lmo
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
